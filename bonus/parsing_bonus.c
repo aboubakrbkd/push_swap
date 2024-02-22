@@ -6,7 +6,7 @@
 /*   By: aboukdid <aboukdid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 12:24:03 by aboukdid          #+#    #+#             */
-/*   Updated: 2024/02/22 12:39:55 by aboukdid         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:56:08 by aboukdid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ int	check_higher(char *str)
 	long	result;
 
 	result = ft_atoi(str);
-	if (result > INT_MAX || result < INT_MIN || (size_t)result >= ULLONG_MAX
-		|| (size_t)result <= ULLONG_MAX)
+	if (result > INT_MAX || result < INT_MIN)
 		return (1);
 	return (0);
 }
@@ -83,6 +82,8 @@ int	check_is_sorted(t_list **a)
 {
 	t_list	*tmp;
 
+	if (!*a)
+		return (1);
 	tmp = *a;
 	while (tmp->next != NULL)
 	{

@@ -6,7 +6,7 @@
 /*   By: aboukdid <aboukdid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:05:48 by aboukdid          #+#    #+#             */
-/*   Updated: 2024/02/22 12:46:24 by aboukdid         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:57:54 by aboukdid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ void	final_check(t_list *a, t_list *b)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
+	free_stack(&a);
+	free_stack(&b);
 }
 
 int	main(int argc, char	**argv)
@@ -109,8 +111,8 @@ int	main(int argc, char	**argv)
 	while (result)
 	{
 		do_movement(&a, &b, result);
+		free(result);
 		result = get_next_line(0);
 	}
-	final_check(a, b);
-	return (0);
+	return (final_check(a, b), 0);
 }

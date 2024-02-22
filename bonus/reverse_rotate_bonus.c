@@ -6,7 +6,7 @@
 /*   By: aboukdid <aboukdid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:05:58 by aboukdid          #+#    #+#             */
-/*   Updated: 2024/02/22 12:40:02 by aboukdid         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:35:22 by aboukdid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	reverse_rotate(t_list **head)
 {
 	t_list	*before_last;
 
-	if (head == NULL || *head == NULL || (*head)->next == NULL)
+	if (!*head || !(*head)->next)
 		return ;
 	before_last = find_before_last_node(*head);
 	before_last->next->next = *head;

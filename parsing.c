@@ -6,7 +6,7 @@
 /*   By: aboukdid <aboukdid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 12:24:03 by aboukdid          #+#    #+#             */
-/*   Updated: 2024/02/22 12:52:59 by aboukdid         ###   ########.fr       */
+/*   Updated: 2024/02/22 15:36:55 by aboukdid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	check_higher(char *str)
 	long	result;
 
 	result = ft_atoi(str);
-	if (result > INT_MAX || result < INT_MIN || (size_t)result == ULLONG_MAX)
+	if (result > INT_MAX || result < INT_MIN)
 		return (1);
 	return (0);
 }

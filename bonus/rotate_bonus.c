@@ -6,7 +6,7 @@
 /*   By: aboukdid <aboukdid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:52:09 by aboukdid          #+#    #+#             */
-/*   Updated: 2024/02/22 12:40:05 by aboukdid         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:35:11 by aboukdid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	rotate(t_list **head)
 	t_list	*top;
 	t_list	*bottom;
 
-	if (head == NULL || (*head)->next == NULL)
+	if (!*head || !(*head)->next)
 		return ;
 	top = *head;
 	bottom = ft_lstlast(top);
