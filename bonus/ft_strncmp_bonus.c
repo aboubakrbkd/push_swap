@@ -6,11 +6,11 @@
 /*   By: aboukdid <aboukdid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:35:10 by aboukdid          #+#    #+#             */
-/*   Updated: 2024/02/22 10:13:34 by aboukdid         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:39:34 by aboukdid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap_bonus.h"
 
 int	ft_strncmp(char *s1, char *s2, int n)
 {

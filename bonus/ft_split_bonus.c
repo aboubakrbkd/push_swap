@@ -6,11 +6,11 @@
 /*   By: aboukdid <aboukdid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 12:19:29 by aboukdid          #+#    #+#             */
-/*   Updated: 2024/02/22 10:13:28 by aboukdid         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:39:03 by aboukdid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap_bonus.h"
 
 static int	countword(const char *s, char c)
 {

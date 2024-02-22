@@ -6,11 +6,11 @@
 /*   By: aboukdid <aboukdid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:30:15 by aboukdid          #+#    #+#             */
-/*   Updated: 2024/02/22 10:14:14 by aboukdid         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:40:11 by aboukdid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap_bonus.h"
 
 int	last_index(t_list **a)
 {

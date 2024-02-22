@@ -6,11 +6,11 @@
 /*   By: aboukdid <aboukdid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:05:48 by aboukdid          #+#    #+#             */
-/*   Updated: 2024/02/22 10:13:55 by aboukdid         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:46:24 by aboukdid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap_bonus.h"
 
 void	free_result_array(char **result)
 {

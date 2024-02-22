@@ -1,51 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   swap_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboukdid <aboukdid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 15:25:31 by aboukdid          #+#    #+#             */
-/*   Updated: 2024/02/20 13:46:03 by aboukdid         ###   ########.fr       */
+/*   Created: 2024/02/10 13:51:57 by aboukdid          #+#    #+#             */
+/*   Updated: 2024/02/22 12:40:08 by aboukdid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-void	push_b(t_list **a, t_list **b)
+static void	swap(t_list **head)
 {
-	t_list	*top_a;
+	t_list	*first;
+	t_list	*second;
 
-	if (b == NULL || *a == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return ;
-	top_a = *a;
-	*a = top_a->next;
-	top_a->next = *b;
-	*b = top_a;
+	first = *head;
+	second = first->next;
+	first->next = second->next;
+	second->next = first;
+	*head = second;
 }
 
-void	push_a(t_list **a, t_list **b)
-{
-	t_list	*top_b;
-
-	if (b == NULL || *b == NULL)
-		return ;
-	top_b = *b;
-	*b = top_b->next;
-	top_b->next = *a;
-	*a = top_b;
-}
-
-void	do_push(t_list **a, t_list **b, int flag)
+void	do_swap(t_list **a, t_list **b, int flag)
 {
 	if (flag == 1)
-	{
-		push_a(a, b);
-		write(1, "pa\n", 3);
-	}
+		swap(a);
 	else if (flag == 2)
+		swap(a);
+	else if (flag == 0)
 	{
-		push_b(a, b);
-		write(1, "pb\n", 3);
+		swap(a);
+		swap(b);
 	}
 }

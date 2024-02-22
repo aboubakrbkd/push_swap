@@ -1,40 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_bonus.c                                       :+:      :+:    :+:   */
+/*   push_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboukdid <aboukdid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 13:51:57 by aboukdid          #+#    #+#             */
-/*   Updated: 2024/02/22 10:14:09 by aboukdid         ###   ########.fr       */
+/*   Created: 2024/02/12 15:25:31 by aboukdid          #+#    #+#             */
+/*   Updated: 2024/02/22 12:39:58 by aboukdid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap_bonus.h"
 
-static void	swap(t_list **head)
+void	push_b(t_list **a, t_list **b)
 {
-	t_list	*first;
-	t_list	*second;
+	t_list	*top_a;
 
-	if (*head == NULL || (*head)->next == NULL)
+	if (b == NULL || *a == NULL)
 		return ;
-	first = *head;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*head = second;
+	top_a = *a;
+	*a = top_a->next;
+	top_a->next = *b;
+	*b = top_a;
 }
 
-void	do_swap(t_list **a, t_list **b, int flag)
+void	push_a(t_list **a, t_list **b)
+{
+	t_list	*top_b;
+
+	if (b == NULL || *b == NULL)
+		return ;
+	top_b = *b;
+	*b = top_b->next;
+	top_b->next = *a;
+	*a = top_b;
+}
+
+void	do_push(t_list **a, t_list **b, int flag)
 {
 	if (flag == 1)
-		swap(a);
+		push_a(a, b);
 	else if (flag == 2)
-		swap(a);
-	else if (flag == 0)
-	{
-		swap(a);
-		swap(b);
-	}
+		push_b(a, b);
 }

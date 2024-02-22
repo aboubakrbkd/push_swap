@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_bonus.c                                    :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboukdid <aboukdid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 12:24:03 by aboukdid          #+#    #+#             */
-/*   Updated: 2024/02/22 10:19:18 by aboukdid         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:52:59 by aboukdid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 int	is_integer(char *str)
 {
@@ -35,7 +35,7 @@ int	check_higher(char *str)
 	long	result;
 
 	result = ft_atoi(str);
-	if (result > INT_MAX || result < INT_MIN)
+	if (result > INT_MAX || result < INT_MIN || (size_t)result == ULLONG_MAX)
 		return (1);
 	return (0);
 }

@@ -1,40 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_bonus.c                                     :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboukdid <aboukdid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 15:52:09 by aboukdid          #+#    #+#             */
-/*   Updated: 2024/02/22 10:14:09 by aboukdid         ###   ########.fr       */
+/*   Created: 2024/02/12 15:25:31 by aboukdid          #+#    #+#             */
+/*   Updated: 2024/02/22 11:35:26 by aboukdid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-static void	rotate(t_list **head)
+void	push_b(t_list **a, t_list **b)
 {
-	t_list	*top;
-	t_list	*bottom;
+	t_list	*top_a;
 
-	if (head == NULL || (*head)->next == NULL)
+	if (b == NULL || *a == NULL)
 		return ;
-	top = *head;
-	bottom = ft_lstlast(top);
-	bottom->next = *head;
-	*head = top->next;
-	top->next = NULL;
+	top_a = *a;
+	*a = top_a->next;
+	top_a->next = *b;
+	*b = top_a;
 }
 
-void	do_rotate(t_list **a, t_list **b, int flag)
+void	push_a(t_list **a, t_list **b)
+{
+	t_list	*top_b;
+
+	if (b == NULL || *b == NULL)
+		return ;
+	top_b = *b;
+	*b = top_b->next;
+	top_b->next = *a;
+	*a = top_b;
+}
+
+void	do_push(t_list **a, t_list **b, int flag)
 {
 	if (flag == 1)
-		rotate(a);
-	else if (flag == 2)
-		rotate(a);
-	else if (flag == 0)
 	{
-		rotate(a);
-		rotate(b);
+		push_a(a, b);
+		write(1, "pa\n", 3);
+	}
+	else if (flag == 2)
+	{
+		push_b(a, b);
+		write(1, "pb\n", 3);
 	}
 }
