@@ -6,16 +6,16 @@
 #    By: aboukdid <aboukdid@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/20 13:10:31 by aboukdid          #+#    #+#              #
-#    Updated: 2024/02/20 19:07:24 by aboukdid         ###   ########.fr        #
+#    Updated: 2024/02/22 10:15:26 by aboukdid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror 
 RM = rm -rf
-NAME = push_swap
-SRCS = ft_atoi.c ft_split.c ft_strjoin.c list_help.c main.c parsing.c push.c \
-		reverse_rotate.c rotate.c sort_pivot.c sort_five.c sort_three_and_four.c swap.c utils.c
+NAME = checker
+SRCS = ft_atoi_bonus.c ft_split_bonus.c ft_strjoin_bonus.c list_help_bonus.c main_bonus.c parsing_bonus.c push_bonus.c \
+		reverse_rotate_bonus.c rotate_bonus.c swap_bonus.c utils_bonus.c utils1.c gnl.c ft_strncmp_bonus.c
 OBJS = $(SRCS:.c=.o)
 
 $(NAME): $(OBJS)
@@ -23,7 +23,7 @@ $(NAME): $(OBJS)
 
 all: $(NAME)
 
-%.o: %.c push_swap.h
+%.o: %.c ../push_swap.h
 	$(CC) $(CFLAGS) -c $< 
 
 clean:

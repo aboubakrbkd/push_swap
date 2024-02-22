@@ -6,7 +6,7 @@
 /*   By: aboukdid <aboukdid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 12:19:38 by aboukdid          #+#    #+#             */
-/*   Updated: 2024/02/20 13:48:46 by aboukdid         ###   ########.fr       */
+/*   Updated: 2024/02/22 10:19:36 by aboukdid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,9 @@ void	print_error(void);
 void	sort_pivot_helper(t_list **a, t_list **b);
 void	if_is_down(t_list **a, t_list **b, int *last_one, int biggest_index);
 void	if_is_up(t_list **a, t_list **b, int *last_one, int biggest_index);
+void	free_stack(t_list **stack);
+void	free_result_array(char **result);
+int		ft_strncmp(char *s1, char *s2, int n);
+char	*get_next_line(int fd);
 
 #endif

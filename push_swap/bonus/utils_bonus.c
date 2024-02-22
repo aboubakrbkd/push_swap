@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboukdid <aboukdid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:30:15 by aboukdid          #+#    #+#             */
-/*   Updated: 2024/02/20 13:51:39 by aboukdid         ###   ########.fr       */
+/*   Updated: 2024/02/22 10:14:14 by aboukdid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	last_index(t_list **a)
 {
@@ -52,4 +52,19 @@ void	print_error(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
+}
+
+void	free_stack(t_list **stack)
+{
+	t_list	*current;
+	t_list	*temp;
+
+	current = *stack;
+	while (current)
+	{
+		temp = current->next;
+		free(current);
+		current = temp;
+	}
+	*stack = NULL;
 }
